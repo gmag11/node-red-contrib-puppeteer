@@ -16,11 +16,14 @@ module.exports = function (RED) {
         if (nodeConfig.debugport != 0) {
           try {
             // Trying to connect to already existing
-            // browser with node's config
+              // browser with node's config
+            const browserURL = `http://${nodeConfig.ipaddr}:${nodeConfig.debugport}`;
+            node.log(`nodeConfig: ${JSON.stringify(nodeConfig)}`);
+            node.log(`Connecting to browser at: ${browserURL}`);
             msg.puppeteer = {
               browser: await puppeteer.connect({
                 ...nodeConfig,
-                  browserURL: `http://${nodeConfig.ipaddr}:${nodeConfig.debugport}`,
+                  browserURL: browserURL,
               }),
             };
 
