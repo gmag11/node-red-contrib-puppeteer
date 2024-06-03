@@ -6,6 +6,7 @@
       timeout: { value: 30000 },
       slowMo: { value: 0 },
       headless: { value: 0, require: true },
+      ipaddr: { value: "127.0.0.1" },
       debugport: { value: 0 },
       devtools: { value: false },
       cookies: { value: "" },
@@ -36,6 +37,10 @@
   <div class="form-row">
       <label for="node-input-headless" style="width: auto !important; padding-right:10px"><i class="fa fa-low-vision"></i> Hide Chrome</label>
       <input type="checkbox" id="node-input-headless" style="margin-top: 0; display:inline-block; width:auto;" />
+  </div>
+  <div class="form-row">
+      <label for="node-input-ipaddr"><i class="fa fa-network-wired"></i> IP Address</label>
+      <input type="text" id="node-input-ipaddr" style="width:100px;" placeholder="127.0.0.1" />
   </div>
   <div class="form-row">
       <label for="node-input-debugport"><i class="fa fa-bug"></i> Debug Port</label>
@@ -88,6 +93,8 @@
       <dd>Slows down Puppeteer operations by the specified amount of milliseconds. Useful so that you can see what is going on.</dd>
       <dt>Hide Chrome<span class="property-type">boolean</span></dt>
       <dd>Whether to run browser in <a href="https://developers.google.com/web/updates/2017/04/headless-chrome" rel="nofollow">headless mode</a>. Defaults to <code>false</code>, it will show Chrome when <code>devtools</code> option is <code>true</code>.</dd>
+      <dt>IP Address<span class="property-type">string</span></dt>
+      <dd>The IP address to connect Puppeteer to a Chrome instance running on another machine. Defaults to <code>127.0.0.1</code>.</dd>
       <dt>Debug Port<span class="property-type">number</span></dt>
       <dd>Specify custom debugging port. It will connect to existing Chrome if port specified. Pass <code>0</code> to discover a random port. Defaults to <code>0</code>.</dd>
       <dt>Show Devtools<span class="property-type">boolean</span></dt>

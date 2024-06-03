@@ -20,7 +20,7 @@ module.exports = function (RED) {
             msg.puppeteer = {
               browser: await puppeteer.connect({
                 ...nodeConfig,
-                browserURL: `http://127.0.0.1:${nodeConfig.debugport}`,
+                  browserURL: `http://${nodeConfig.ipaddr}:${nodeConfig.debugport}`,
               }),
             };
 
